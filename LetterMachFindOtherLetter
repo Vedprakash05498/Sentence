@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Assignment3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String sentance = sc.nextLine();
+        String letter = sc.nextLine();
+        
+        int result = findChar(sentance.toLowerCase(), letter.toLowerCase());
+        
+        if(result<0)
+        {
+            System.out.println("The letter does not exist in the sentence");
+        }
+        else{
+            System.out.println(sentance.substring(result+1));
+        }
+        
+    }
+    // Function to check if the letter is there in sentance and it's position
+    public static int findChar(String str, String k)
+    {
+        for (int i = 0 ; i<str.length() ; i++)
+        {
+        if (str.charAt(i) == k.charAt(0))
+        {
+            return i;
+        }
+        }
+        return -1;
+    }
+}
